@@ -1,26 +1,22 @@
-from Python.pr1_Main import *
-from Python.achievements import giveAchievements
-from Python.reports import writeGameLog
+from Python.GameSession import GameSession
+from Python.Mage import Mage
+from Python.Shaman import Shaman
+from Python.Warrior import Warrior
 
-#Subtask 1 - interpret the logs of th game as a dictionry
-events = [15, -8, 0, 30, -12, 5, 0, -3, 20]
-#print(log_analysis(events))
+# Створення об'єктів гравців
+player1 = Warrior("Garrosh", [25, -10, 0, 40, -5])
+player2 = Mage("Jaina", [35, 0, -20, 50])
+player3 = Shaman("Thrall", [0, -5, 15, 0, 10, 0])
 
-#Subtask 2 - Text log analysis
-#text_log = "Player1 entered the dungeon. Player1 attacked the enemy! Enemy attacked Player1! Player1 used healing potion. Player1 defeated the enemy! Player1 exited the dungeon."
-#print(text_log_analysis(text_log))
+# Створення ігрової сесії
+session = GameSession("Session_001")
+session.add_participant(player1)
+session.add_participant(player2)
+session.add_participant(player3)
 
-#Subtask 3 - analysis of player data
-characters = [
-    {"name": "Warrior", "actions": [25, -10, 0, 40, -5]},
-    {"name": "Mage", "actions": [35, 0, -20, 50]},
-    {"name": "Archer", "actions": [20, -5, 15, 0, 10]}
-]
-#print(character_log_analysis(characters))
+# Генерація звіту
+for player in session.participants:
+    player.check_basic_achievements()
 
-#Subtask 4 - game sum up
-#game_sum_up(events, text_log, characters)
-
-
-
-writeGameLog(giveAchievements(characters))
+session.assign_mvp()
+session.generate_report("session_report.txt")
