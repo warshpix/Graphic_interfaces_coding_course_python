@@ -14,6 +14,7 @@ class AuthError(Exception):
     """Помилка доступу: гаманець заблоковано"""
     pass
 
+
 # 2. Декоратори (окремі функції)
 def log_operation(func):
     def wrapper(*args, **kwargs):
