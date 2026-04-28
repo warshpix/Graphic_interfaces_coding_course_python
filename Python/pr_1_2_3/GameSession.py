@@ -1,4 +1,4 @@
-from Python.Character import Character
+from Python.pr_1_2_3.Character import Character
 
 
 class GameSession:

@@ -1,7 +1,7 @@
-from Python.GameSession import GameSession
-from Python.Mage import Mage
-from Python.Shaman import Shaman
-from Python.Warrior import Warrior
+from Python.pr_1_2_3.GameSession import GameSession
+from Python.pr_1_2_3.Mage import Mage
+from Python.pr_1_2_3.Shaman import Shaman
+from Python.pr_1_2_3.Warrior import Warrior
 
 # Створення об'єктів гравців
 player1 = Warrior("Garrosh", [25, -10, 0, 40, -5])
